@@ -14,7 +14,7 @@ const navigationItems = [
 export function SiteHeader() {
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#0a0a0d]/85 shadow-[0_1px_12px_rgba(0,0,0,0.8)] backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-[1200px] items-center justify-between gap-4 px-5 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-300 items-center justify-between gap-4 px-5 lg:px-8">
         <div className="flex min-w-0 items-center">
           <Link href="/" className="inline-flex shrink-0 items-center gap-2 font-mono text-lg font-bold tracking-tight text-white">
             <Image src="/Logo%20F%20Code.jpg" alt="Ferry Febrian logo" width={32} height={32} className="size-8 rounded-lg object-cover" />

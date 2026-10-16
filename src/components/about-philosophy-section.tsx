@@ -20,7 +20,7 @@ const journey = [
 export function AboutPhilosophySection() {
   return (
     <section id="about" className="relative border-b border-white/10 bg-[#0a0b0e]/70 py-10 lg:py-16">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 px-5 lg:px-8">
+      <div className="mx-auto flex max-w-300 flex-col gap-6 px-5 lg:px-8">
         <div className="flex flex-col justify-between gap-2 md:flex-row md:items-end">
           <div className="flex flex-col gap-1">
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">

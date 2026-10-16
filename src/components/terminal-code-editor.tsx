@@ -41,7 +41,7 @@ export function TerminalCodeEditor({
 
   return (
     <div className="group relative flex min-w-0 max-w-full flex-col gap-4 overflow-visible rounded-xl border border-white/10 bg-[#111216] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.8)] transition-colors hover:border-emerald-500/40 active:border-emerald-500/40">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-100 group-active:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-br from-emerald-500/5 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-100 group-active:opacity-100" />
 
       <div className="relative z-10 flex items-center justify-between border-b border-white/5 pb-2">
         <div className="flex items-center gap-1.5">

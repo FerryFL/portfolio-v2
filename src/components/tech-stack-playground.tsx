@@ -35,7 +35,7 @@ export function TechStackPlayground() {
 
   return (
     <section className="relative border-b border-white/10 py-10 lg:py-16">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 px-5 lg:px-8">
+      <div className="mx-auto flex max-w-300 flex-col gap-6 px-5 lg:px-8">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
