@@ -22,8 +22,8 @@ export function SiteHeader() {
           </Link>
         </div>
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
-          {navigationItems.map((item, index) => (
-            <Link key={item.href} href={item.href} className={index === 0 ? "rounded-lg bg-white px-3 py-2 font-mono text-xs font-medium text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400" : "rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400"}>{item.label}</Link>
+          {navigationItems.map((item) => (
+            <Link key={item.href} href={item.href} className="rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400">{item.label}</Link>
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
@@ -39,9 +39,9 @@ export function SiteHeader() {
                 <SheetTitle>Navigation menu</SheetTitle>
                 <SheetDescription>Jump to a section or get in touch.</SheetDescription>
               </SheetHeader>
-              <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
-                {navigationItems.map((item, index) => (
-                  <SheetClose key={item.href} nativeButton={false} render={<Link href={item.href} />} className={index === 0 ? "rounded-lg bg-white px-4 py-3 font-mono text-sm font-medium text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400" : "rounded-lg px-4 py-3 font-mono text-sm text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400"}>{item.label}</SheetClose>
+              <nav aria-label="Mobile navigation" className="flex flex-col">
+                {navigationItems.map((item) => (
+                  <SheetClose key={item.href} nativeButton={false} render={<Link href={item.href} />} className="rounded-lg px-4 py-3 font-mono text-sm text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400 text-center">{item.label}</SheetClose>
                 ))}
                 <SheetClose nativeButton={false} render={<Link href="/CV_Ferry_Febrian.pdf" target="_blank" />} className="mt-2 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#17181d] px-4 py-3 font-mono text-sm text-white transition-colors hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black"><FileText data-icon="inline-start" />Resume</SheetClose>
                 <SheetClose nativeButton={false} render={<Link href="/#contact" />} className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 font-mono text-sm font-semibold text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400">Get in Touch<Send data-icon="inline-end" /></SheetClose>

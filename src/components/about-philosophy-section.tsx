@@ -2,52 +2,18 @@ import { Badge } from "@/components/ui/badge"
 
 const journey = [
   {
-    number: "01",
-    title: "Bina Nusantara University",
-    role: "CS Alumnus",
-    description:
-      "Bachelor Degree of Computer Science. Deep focus on algorithms, software architecture, and AI-driven solutions.",
-  },
-  {
     number: "02",
-    title: "Kawan Lama Group",
-    role: "Software Engineer Intern",
-    description:
-      "Built and scaled mission-critical internal recruitment & LMS systems handling thousands of organizational users.",
-  },
-  {
-    number: "03",
     title: "NTT DATA",
-    role: "Present",
+    role: "Software Developer",
     description:
       "Serving as Associate Software Developer, architecting high-reliability digital transformation solutions.",
   },
-]
-
-const tenets = [
   {
     number: "01",
-    title: "Clean Architecture",
+    title: "Kawan Lama Group",
+    role: "Software Engineer (Intern)",
     description:
-      "Strict domain separation, modular components, and predictable state transitions.",
-  },
-  {
-    number: "02",
-    title: "Performance First",
-    description:
-      "Sub-second response budgets, efficient queries, and streamlined server-side payloads.",
-  },
-  {
-    number: "03",
-    title: "Developer Experience",
-    description:
-      "Self-documenting code, exhaustive typing with TypeScript, and automated testing.",
-  },
-  {
-    number: "04",
-    title: "Constant Evolution",
-    description:
-      "Embracing challenges as opportunities to expand domain knowledge across the full stack.",
+      "Built and scaled mission-critical internal recruitment & LMS systems handling thousands of organizational users.",
   },
 ]
 
@@ -90,16 +56,15 @@ export function AboutPhilosophySection() {
                       <h3 className="font-mono text-base font-semibold text-white">
                         {item.title}
                       </h3>
-                      {index === journey.length - 1 ? (
+                      {index === 0 ? (
                         <Badge className="rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 font-mono text-[11px] font-semibold text-emerald-400">
                           Present
                         </Badge>
-                      ) : (
-                        <span className="font-mono text-[11px] text-[#8a8a93]">
-                          {item.role}
-                        </span>
-                      )}
+                      ) : ""}
                     </div>
+                    <span className="font-mono text-[11px] text-[#8a8a93] pb-2">
+                      {item.role}
+                    </span>
                     <p className="mt-1 font-mono text-xs leading-5 text-[#8a8a93]">
                       {item.description}
                     </p>
@@ -154,27 +119,6 @@ export function AboutPhilosophySection() {
               <svg className="h-8 w-24 text-emerald-400" fill="none" viewBox="0 0 100 30">
                 <path d="M0 25 L20 20 L40 22 L60 12 L80 15 L100 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
               </svg>
-            </div>
-          </article>
-
-          <article className="flex flex-col gap-6 rounded-xl border border-white/10 bg-[#111216] p-6 shadow-md md:col-span-12">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400">
-                Engineering Tenets
-              </span>
-              <span className="font-mono text-xs text-[#8a8a93]">How I Build Software</span>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {tenets.map((tenet) => (
-                <div key={tenet.title} className="flex flex-col gap-2 rounded-lg border border-white/5 bg-[#17181d] p-4 transition-colors hover:border-emerald-500/40 active:border-emerald-500/40">
-                  <div className="flex size-8 items-center justify-center rounded-lg border border-emerald-500/20 bg-emerald-500/10 font-mono text-xs text-emerald-400">
-                    {tenet.number}
-                  </div>
-                  <h3 className="font-mono text-base font-semibold text-white">{tenet.title}</h3>
-                  <p className="font-mono text-xs leading-5 text-[#8a8a93]">{tenet.description}</p>
-                </div>
-              ))}
             </div>
           </article>
         </div>

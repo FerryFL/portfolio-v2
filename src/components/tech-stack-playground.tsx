@@ -46,7 +46,7 @@ export function TechStackPlayground() {
             </h2>
           </div>
 
-          <div className="flex max-w-full gap-1 overflow-x-auto rounded-lg border border-white/10 bg-[#111216] p-1">
+          <div className="flex max-w-full gap-1 overflow-x-auto rounded-lg border border-white/10 bg-[#111216] p-1 pb-2">
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -65,9 +65,9 @@ export function TechStackPlayground() {
             <div key={technology.name} className="group flex flex-col gap-1 rounded-xl border border-white/10 bg-[#111216] p-4 transition-all hover:border-emerald-500 hover:bg-[#17181d] active:border-emerald-500 active:bg-[#17181d]">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[11px] font-semibold text-emerald-400">{technology.type}</span>
-                <span className="size-2 rounded-full bg-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />
+                <span className="size-2 rounded-full bg-emerald-400 opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100" />
               </div>
-              <span className="font-mono text-base font-bold text-white transition-colors group-hover:text-emerald-400">{technology.name}</span>
+              <span className="font-mono text-base font-bold text-white transition-colors group-hover:text-emerald-400 group-active:text-emerald-400">{technology.name}</span>
               <span className="font-mono text-[11px] text-[#8a8a93]">{technology.detail}</span>
             </div>
           ))}

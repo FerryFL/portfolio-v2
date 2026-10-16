@@ -24,7 +24,7 @@ function SheetContent({ className, side = "right", ...props }: React.ComponentPr
         data-slot="sheet-content"
         data-side={side}
         className={cn(
-          "fixed z-50 flex h-full w-3/5 max-w-sm flex-col gap-6 border-white/10 bg-[#0a0a0d] p-6 text-white shadow-2xl outline-none transition-transform duration-200 data-ending-style:duration-200 data-starting-style:duration-200",
+          "fixed z-50 flex h-full w-3/5 max-w-sm flex-col gap-2 border-white/10 bg-[#0a0a0d] p-6 text-white shadow-2xl outline-none transition-transform duration-200 data-ending-style:duration-200 data-starting-style:duration-200",
           side === "right" && "inset-y-0 right-0 border-l data-ending-style:translate-x-full data-starting-style:translate-x-full",
           side === "left" && "inset-y-0 left-0 border-r data-ending-style:-translate-x-full data-starting-style:-translate-x-full",
           side === "top" && "inset-x-0 top-0 h-auto border-b data-ending-style:-translate-y-full data-starting-style:-translate-y-full",
