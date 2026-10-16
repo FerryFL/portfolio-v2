@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&amp;family=JetBrains+Mono:ital,wght@0,300..800;1,300..800&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        @layer base {
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'JetBrains Mono', 'Fira Code', 'Space Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+            }
+
+            * {
+                font-family: inherit;
+            }
+
+            .material-symbols-outlined {
+                font-family: 'Material Symbols Outlined' !important;
+            }
+
+            body {
+                overscroll-behavior: none;
+            }
+
+            main> :first-child {
+                margin-top: 0 !important;
+            }
+
+            main> :last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "accent": "#10B981",
+                        "accent-warm": "#34D399",
+                        "accent-dark": "#059669",
+                        "accent-glow": "rgba(16, 185, 129, 0.18)",
+                        "surface-tint": "#10B981",
+                        "primary-fixed-dim": "#6EE7B7",
+                        "on-secondary-fixed": "#064E3B",
+                        "surface": "#090A0C",
+                        "secondary-fixed-dim": "#34D399",
+                        "on-surface-variant": "#A1A1AA",
+                        "on-tertiary-fixed-variant": "#047857",
+                        "surface-variant": "#16161A",
+                        "on-tertiary-fixed": "#022C22",
+                        "surface-container-low": "#0D0E11",
+                        "surface-card": "#111216",
+                        "on-background": "#FFFFFF",
+                        "inverse-primary": "#059669",
+                        "text-muted": "#8A8A93",
+                        "on-primary-fixed": "#022C22",
+                        "text-primary": "#FFFFFF",
+                        "on-secondary": "#18181B",
+                        "surface-container-highest": "#212228",
+                        "on-secondary-fixed-variant": "#064E3B",
+                        "on-error": "#FFFFFF",
+                        "on-error-container": "#F87171",
+                        "primary-fixed": "#D1FAE5",
+                        "primary": "#10B981",
+                        "on-primary-fixed-variant": "#047857",
+                        "on-surface": "#F4F4F5",
+                        "surface-bright": "#26262B",
+                        "inverse-surface": "#F4F4F5",
+                        "primary-container": "#FFFFFF",
+                        "outline": "#3F3F46",
+                        "error-container": "#7F1D1D",
+                        "canvas-base": "#070709",
+                        "surface-elevated": "#17181D",
+                        "surface-dim": "#0A0B0E",
+                        "tertiary-fixed": "#D1FAE5",
+                        "status-online": "#10B981",
+                        "on-primary": "#0A0A0C",
+                        "border-subtle": "#22232A",
+                        "background": "#090A0C",
+                        "surface-container-high": "#1C1D23",
+                        "surface-container": "#131418",
+                        "border-hover": "#3F3F46",
+                        "tertiary": "#34D399",
+                        "error": "#EF4444",
+                        "secondary": "#10B981",
+                        "tertiary-fixed-dim": "#6EE7B7",
+                        "on-secondary-container": "#0A0A0C",
+                        "surface-container-lowest": "#050507",
+                        "secondary-fixed": "#A7F3D0",
+                        "on-tertiary": "#0A0A0C",
+                        "secondary-container": "#10B981",
+                        "inverse-on-surface": "#18181B",
+                        "on-primary-container": "#0A0A0C",
+                        "outline-variant": "#2A2B33",
+                        "tertiary-container": "#059669",
+                        "on-tertiary-container": "#FFFFFF"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter-mobile": "1rem",
+                        "space-sm": "0.5rem",
+                        "space-xs": "0.25rem",
+                        "space-xl": "2.5rem",
+                        "margin": "2rem",
+                        "gutter": "1.5rem",
+                        "margin-mobile": "1.25rem",
+                        "space-md": "1rem",
+                        "space-lg": "1.5rem"
+                    },
+                    fontFamily: {
+                        "mono": ["'JetBrains Mono'", "'Fira Code'", "'Space Mono'", "ui-monospace", "monospace"],
+                        "label-code": ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+                        "label-mono-sm": ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+                        "body-lg": ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+                        "headline-lg-mobile": ["'JetBrains Mono'", "'Space Mono'", "monospace"],
+                        "display-hero-mobile": ["'JetBrains Mono'", "'Space Mono'", "monospace"],
+                        "display-hero": ["'JetBrains Mono'", "'Space Mono'", "monospace"],
+                        "headline-lg": ["'JetBrains Mono'", "'Space Mono'", "monospace"],
+                        "body-md": ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+                        "body-sm": ["'JetBrains Mono'", "'Fira Code'", "monospace"],
+                        "headline-sm": ["'JetBrains Mono'", "'Space Mono'", "monospace"],
+                        "headline-md": ["'JetBrains Mono'", "'Space Mono'", "monospace"]
+                    },
+                    fontSize: {
+                        "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-mono-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        };</script>
+</head>
+
+<body
+    class="bg-[#090A0C] font-mono text-on-surface selection:bg-emerald-500 selection:text-black min-h-screen flex flex-col antialiased">
+    <header
+        class="fixed top-0 left-0 w-full z-50 bg-[#0A0A0D]/85 backdrop-blur-xl border-b border-white/10 shadow-[0_1px_12px_rgba(0,0,0,0.8)]">
+        <div
+            class="h-20 max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+            <div class="flex items-center gap-space-md"><a
+                    class="flex items-center gap-space-sm group focus:outline-none" data-path="overview" href="#"><img
+                        alt="FF Monogram Logo"
+                        class="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida/AEtjO1VP1QlL5CUZh9sSTLrgCM-5GPEAVY8WGU1ADk45xdPmjscj5iOa3mFI8YuifrtMeKrIXNIbGNRKznO_RoTbEW5rfEBOi6GzYLcHQX1s-0k8Xdg38NpKF6oSVmNOpRRl1UP8ue2-_Qx6lmEIVtZ6qyLd4n2Iu8Fxm4UZcqSKhvE7fzFVRb_ecWSqjP61OM_t6lNcH6OEn8cV1wiDYr2usCOAFBWOUxpr3l45Jdnx-luN5qZkKTvm_PGfKQ" />
+                    <div class="flex flex-col"><span
+                            class="font-mono text-headline-sm text-white tracking-tight group-hover:text-emerald-400 transition-colors font-bold">ferry<span
+                                class="text-emerald-400">.dev</span></span></div>
+                </a>
+                <div
+                    class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-elevated border border-white/10">
+                    <span class="relative flex h-2 w-2"><span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span
+                            class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span><span
+                        class="font-mono text-label-mono-sm text-text-muted">Available for collaborations</span></div>
+            </div>
+            <nav class="hidden md:flex items-center gap-space-xs lg:gap-space-sm"
+                data-active-classes="text-black bg-white font-mono font-medium rounded-lg px-space-sm py-space-xs"><a
+                    aria-current="page"
+                    class="transition-all text-black bg-white font-mono font-medium rounded-lg px-space-sm py-space-xs"
+                    data-path="overview" href="#">Overview</a><a
+                    class="font-mono text-label-code text-on-surface-variant hover:text-white hover:bg-surface-elevated hover:border-white/10 border border-transparent px-space-sm py-space-xs rounded-lg transition-all"
+                    data-path="experience-and-stack" href="#">Experience &amp; Stack</a><a
+                    class="font-mono text-label-code text-on-surface-variant hover:text-white hover:bg-surface-elevated hover:border-white/10 border border-transparent px-space-sm py-space-xs rounded-lg transition-all"
+                    data-path="projects" href="#">Projects</a><a
+                    class="font-mono text-label-code text-on-surface-variant hover:text-white hover:bg-surface-elevated hover:border-white/10 border border-transparent px-space-sm py-space-xs rounded-lg transition-all"
+                    data-path="contact" href="#">Contact</a></nav>
+            <div class="flex items-center gap-space-sm"><a
+                    class="hidden sm:inline-flex items-center justify-center font-mono text-label-code px-space-md py-space-xs rounded-lg bg-surface-elevated border border-white/10 text-white hover:bg-surface-bright hover:border-emerald-500 hover:text-emerald-400 transition-all"
+                    data-path="download-cv" href="#"><span
+                        class="material-symbols-outlined text-[16px] mr-space-xs">description</span>Resume</a><a
+                    class="inline-flex items-center justify-center font-mono text-label-code font-semibold px-space-md py-space-xs rounded-lg bg-white text-black hover:bg-emerald-400 hover:text-black transition-all shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_20px_rgba(16,185,129,0.35)]"
+                    data-path="contact" href="#"><span
+                        class="material-symbols-outlined text-[16px] mr-space-xs">send</span>Get in Touch</a>
+                <div
+                    class="w-8 h-8 rounded-full bg-surface-elevated border border-white/15 flex items-center justify-center ml-space-xs flex-shrink-0 text-emerald-400">
+                    <span class="material-symbols-outlined text-[18px]">person</span></div>
+            </div>
+        </div>
+    </header>
+    <main class="w-full flex-1 pt-20 bg-canvas-base">
+        <div class="flex flex-col w-full text-on-surface">
+            <!-- HERO SECTION -->
+            <section class="relative w-full overflow-hidden py-space-xl lg:py-24 border-b border-white/10">
+                <!-- Ambient Emerald Green Glow -->
+                <div
+                    class="absolute -top-32 left-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none">
+                </div>
+                <div
+                    class="absolute top-1/2 -right-24 w-80 h-80 bg-emerald-400/5 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                        <!-- Left: Intro & Headings -->
+                        <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
+                            <!-- Playful glowing status pill in Emerald -->
+                            <div
+                                class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-card border border-emerald-500/30 shadow-[0_0_16px_rgba(16,185,129,0.12)]">
+                                <span class="text-[14px]">👋</span>
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 tracking-wider uppercase font-semibold">Hello,
+                                    World! I am Ferry Febrian</span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            </div>
+                            <!-- Hero Headline -->
+                            <h1 class="font-mono text-display-hero text-text-primary tracking-tight font-bold">
+                                Software Engineer crafting <span class="text-emerald-400">high-performance</span> web
+                                ecosystems.
+                            </h1>
+                            <!-- Subtext with Enterprise Pedigree -->
+                            <p class="font-mono text-body-lg text-text-muted max-w-xl">
+                                Associate Software Developer at <span class="text-white font-medium">NTT DATA</span> ·
+                                Computer Science Alumnus at <span class="text-white font-medium">Bina Nusantara
+                                    University</span> · Former SE Intern at <span class="text-white font-medium">Kawan
+                                    Lama Group</span>.
+                            </p>
+                            <!-- Action Cluster -->
+                            <div class="flex flex-wrap items-center gap-space-sm pt-space-sm w-full sm:w-auto">
+                                <a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-white text-black font-mono font-bold text-body-md hover:bg-emerald-400 hover:text-black shadow-[0_0_24px_rgba(255,255,255,0.2)] hover:shadow-[0_0_24px_rgba(16,185,129,0.4)] transition-all"
+                                    href="#projects">
+                                    <span class="material-symbols-outlined text-[18px]">terminal</span>
+                                    <span>Explore Projects</span>
+                                </a>
+                                <a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-surface-elevated border border-white/15 text-text-primary hover:bg-surface-bright hover:border-emerald-500 hover:text-emerald-400 font-mono text-body-md transition-all"
+                                    href="/CV_Ferry_Febrian.pdf" target="_blank">
+                                    <span class="material-symbols-outlined text-[18px]">download</span>
+                                    <span>Download CV</span>
+                                </a>
+                                <!-- Interactive Copy Email Button -->
+                                <button
+                                    class="relative inline-flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-lg bg-surface-card border border-white/10 hover:border-emerald-500/50 text-on-surface-variant hover:text-white transition-all font-mono"
+                                    id="copy-email-hero-btn"
+                                    onclick="copyEmailSnippet('ferryfebrian.lim@gmail.com', 'hero-copy-feedback')">
+                                    <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                                    <span class="font-mono text-label-code">Copy Email</span>
+                                    <span
+                                        class="absolute -top-8 px-2 py-1 rounded bg-emerald-400 text-black font-mono text-label-mono-sm font-semibold opacity-0 transition-opacity pointer-events-none"
+                                        id="hero-copy-feedback">Copied! ✨</span>
+                                </button>
+                            </div>
+                            <!-- Micro Quick Stats Bar -->
+                            <div
+                                class="pt-space-md flex flex-wrap items-center gap-space-lg font-mono text-label-mono-sm text-text-muted">
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[16px] text-emerald-400">verified</span>
+                                    <span>Full-Stack Mastery</span>
+                                </div>
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[16px] text-emerald-400">bolt</span>
+                                    <span>Production Scale</span>
+                                </div>
+                                <div class="flex items-center gap-space-xs">
+                                    <span class="material-symbols-outlined text-[16px] text-emerald-400">hub</span>
+                                    <span>Jakarta, ID (UTC+7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right: Interactive Code Block / Playful Terminal Drawer -->
+                        <div class="lg:col-span-5 relative">
+                            <!-- Glass card backdrop with soft emerald accent glow -->
+                            <div
+                                class="rounded-xl bg-surface-card border border-white/10 shadow-[0_16px_40px_rgba(0,0,0,0.8)] p-space-md flex flex-col gap-space-md relative overflow-hidden group hover:border-emerald-500/40 transition-colors">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity">
+                                </div>
+                                <!-- Window Title bar -->
+                                <div
+                                    class="flex items-center justify-between relative z-10 pb-space-xs border-b border-white/5">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-emerald-500/60 inline-block"></span>
+                                        <span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block"></span>
+                                        <span
+                                            class="ml-space-xs font-mono text-label-mono-sm text-text-muted">ferry-profile.ts</span>
+                                    </div>
+                                    <button class="text-text-muted hover:text-emerald-400 transition-colors relative"
+                                        onclick="copySnippetText('code-block-content', 'terminal-copy-feedback')">
+                                        <span class="material-symbols-outlined text-[16px]">copy_all</span>
+                                        <span
+                                            class="absolute -top-7 right-0 px-2 py-0.5 rounded bg-emerald-400 text-black font-mono text-label-mono-sm font-semibold opacity-0 transition-opacity pointer-events-none"
+                                            id="terminal-copy-feedback">Copied!</span>
+                                    </button>
+                                </div>
+                                <!-- Monospace Code Screen -->
+                                <pre class="relative z-10 font-mono text-label-code leading-relaxed text-[#D4D4D8] overflow-x-auto p-space-sm bg-[#070709] rounded-lg border border-white/5"
+                                    id="code-block-content"><code><span class="text-emerald-400 font-semibold">const</span> engineer = {
+  <span class="text-white">name</span>: <span class="text-emerald-300">"Ferry Febrian"</span>,
+  <span class="text-white">role</span>: <span class="text-emerald-300">"Associate Developer"</span>,
+  <span class="text-white">company</span>: <span class="text-emerald-300">"NTT DATA"</span>,
+  <span class="text-white">motto</span>: <span class="text-[#A1A1AA]">"Motivation gets you going,
+          but discipline keeps you growing"</span>,
+  <span class="text-white">stack</span>: [<span class="text-emerald-300">"Next.js"</span>, <span class="text-emerald-300">"TypeScript"</span>, <span class="text-emerald-300">"C#"</span>, <span class="text-emerald-300">"Python"</span>],
+  <span class="text-white">impact</span>: <span class="text-emerald-400">"30,000+ Enterprise Users"</span>
+};</code></pre>
+                                <!-- Focus Status Widget -->
+                                <div
+                                    class="relative z-10 rounded-lg bg-surface-elevated/90 border border-white/10 p-space-sm flex items-center justify-between gap-space-sm">
+                                    <div class="flex items-center gap-space-sm min-w-0">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-surface-card border border-white/10 flex items-center justify-center flex-shrink-0 text-emerald-400">
+                                            <span class="material-symbols-outlined text-[18px]">psychology</span>
+                                        </div>
+                                        <div class="flex flex-col min-w-0">
+                                            <span
+                                                class="font-mono text-label-mono-sm text-text-muted uppercase tracking-wider">Current
+                                                Focus</span>
+                                            <span class="font-mono text-label-code text-white truncate">Next.js 15,
+                                                TypeScript &amp; Distributed Systems</span>
+                                        </div>
+                                    </div>
+                                    <span
+                                        class="flex-shrink-0 px-2 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono text-label-mono-sm font-semibold">Active</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- INTERACTIVE BENTO BOX: ABOUT & ENGINEERING PHILOSOPHY -->
+            <section class="w-full py-space-xl bg-surface-dim/70 relative border-b border-white/10">
+                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-lg">
+                    <!-- Section Header -->
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+                        <div class="flex flex-col gap-space-xs">
+                            <div
+                                class="flex items-center gap-space-xs text-emerald-400 font-mono text-label-code uppercase tracking-widest font-semibold">
+                                <span>// 01</span>
+                                <span>Architectural Journey</span>
+                            </div>
+                            <h2 class="font-mono text-headline-lg text-white font-bold">About Me &amp; Philosophy</h2>
+                        </div>
+                        <p class="font-mono text-body-md text-text-muted max-w-md">
+                            Combining academic rigor from Bina Nusantara University with real-world enterprise
+                            engineering at Kawan Lama &amp; NTT DATA.
+                        </p>
+                    </div>
+                    <!-- Bento Grid (3 Custom High-Impact Cards) -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+                        <!-- Bento 1: Journey Timeline (7 cols) -->
+                        <div
+                            class="md:col-span-7 rounded-xl bg-surface-card border border-white/10 p-space-lg flex flex-col justify-between gap-space-md shadow-md hover:border-emerald-500/30 transition-all">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-widest font-semibold">Trajectory</span>
+                                <span class="material-symbols-outlined text-text-muted text-[20px]">timeline</span>
+                            </div>
+                            <!-- Journey Step Flow -->
+                            <div class="flex flex-col gap-space-md my-space-xs">
+                                <!-- Step 1 -->
+                                <div class="flex items-start gap-space-md group">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-elevated border border-white/10 flex items-center justify-center flex-shrink-0 text-emerald-400 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">school</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center justify-between flex-wrap gap-space-xs">
+                                            <h3 class="font-mono text-headline-sm text-white font-semibold">Bina
+                                                Nusantara University</h3>
+                                            <span class="font-mono text-label-mono-sm text-text-muted">CS Alumnus</span>
+                                        </div>
+                                        <p class="font-mono text-body-sm text-text-muted">Bachelor Degree of Computer
+                                            Science. Deep focus on algorithms, software architecture, and AI-driven
+                                            solutions.</p>
+                                    </div>
+                                </div>
+                                <!-- Step 2 -->
+                                <div class="flex items-start gap-space-md group">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-elevated border border-white/10 flex items-center justify-center flex-shrink-0 text-emerald-400 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">laptop_mac</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center justify-between flex-wrap gap-space-xs">
+                                            <h3 class="font-mono text-headline-sm text-white font-semibold">Kawan Lama
+                                                Group</h3>
+                                            <span class="font-mono text-label-mono-sm text-text-muted">Software Engineer
+                                                Intern</span>
+                                        </div>
+                                        <p class="font-mono text-body-sm text-text-muted">Built and scaled
+                                            mission-critical internal recruitment &amp; LMS systems handling thousands
+                                            of organizational users.</p>
+                                    </div>
+                                </div>
+                                <!-- Step 3 -->
+                                <div class="flex items-start gap-space-md group">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-surface-elevated border border-white/10 flex items-center justify-center flex-shrink-0 text-emerald-400 group-hover:bg-emerald-400 group-hover:text-black transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">rocket_launch</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <div class="flex items-center justify-between flex-wrap gap-space-xs">
+                                            <h3 class="font-mono text-headline-sm text-white font-semibold">NTT DATA
+                                            </h3>
+                                            <span
+                                                class="px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono text-label-mono-sm font-semibold">Present</span>
+                                        </div>
+                                        <p class="font-mono text-body-sm text-text-muted">Serving as Associate Software
+                                            Developer, architecting high-reliability digital transformation solutions.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Bottom Quote Motto Banner -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-elevated border border-white/10 flex items-center gap-space-sm">
+                                <span class="material-symbols-outlined text-emerald-400 text-[20px]">format_quote</span>
+                                <p class="font-mono text-label-code text-white italic">
+                                    "Motivation gets you going, but discipline keeps you growing."
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Bento 2: Developer Impact Stats (5 cols) -->
+                        <div
+                            class="md:col-span-5 rounded-xl bg-surface-card border border-white/10 p-space-lg flex flex-col justify-between gap-space-md shadow-md hover:border-emerald-500/30 transition-all">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-widest font-semibold">Impact
+                                    Matrix</span>
+                                <span class="material-symbols-outlined text-text-muted text-[20px]">analytics</span>
+                            </div>
+                            <!-- Quantitative Metrics Grid -->
+                            <div class="grid grid-cols-2 gap-space-md my-auto">
+                                <div
+                                    class="flex flex-col p-space-sm rounded-lg bg-surface-elevated border border-white/5">
+                                    <span class="font-mono text-headline-lg font-bold text-emerald-400">30K+</span>
+                                    <span class="font-mono text-label-mono-sm text-text-muted mt-1">Active Users
+                                        Impacted</span>
+                                </div>
+                                <div
+                                    class="flex flex-col p-space-sm rounded-lg bg-surface-elevated border border-white/5">
+                                    <span class="font-mono text-headline-lg font-bold text-white">3+</span>
+                                    <span class="font-mono text-label-mono-sm text-text-muted mt-1">Enterprise
+                                        Systems</span>
+                                </div>
+                                <div
+                                    class="flex flex-col p-space-sm rounded-lg bg-surface-elevated border border-white/5">
+                                    <span class="font-mono text-headline-lg font-bold text-emerald-400">99.8%</span>
+                                    <span class="font-mono text-label-mono-sm text-text-muted mt-1">Uptime
+                                        Reliability</span>
+                                </div>
+                                <div
+                                    class="flex flex-col p-space-sm rounded-lg bg-surface-elevated border border-white/5">
+                                    <span class="font-mono text-headline-lg font-bold text-white">4+</span>
+                                    <span class="font-mono text-label-mono-sm text-text-muted mt-1">Core Tech
+                                        Stacks</span>
+                                </div>
+                            </div>
+                            <!-- Tiny SVG Sparkline visualizing growth & uptime in Vibrant Emerald -->
+                            <div
+                                class="rounded-lg bg-surface-elevated border border-white/10 p-space-xs flex items-center justify-between">
+                                <div class="flex flex-col">
+                                    <span class="font-mono text-label-mono-sm text-text-muted">Delivery Velocity</span>
+                                    <span class="font-mono text-label-code text-emerald-400 font-semibold">Optimal
+                                        Performance</span>
+                                </div>
+                                <svg class="w-24 h-8 text-emerald-400" fill="none" stroke="currentColor"
+                                    viewbox="0 0 100 30">
+                                    <path d="M0 25 L20 20 L40 22 L60 12 L80 15 L100 4" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <!-- Bento 3: Engineering Principles / How I Work (Full 12 cols span) -->
+                        <div
+                            class="md:col-span-12 rounded-xl bg-surface-card border border-white/10 p-space-lg flex flex-col gap-space-md shadow-md">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-widest font-semibold">Engineering
+                                    Tenets</span>
+                                <span class="font-mono text-label-code text-text-muted">How I Build Software</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+                                <!-- Principle 1 -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-elevated border border-white/5 flex flex-col gap-space-xs hover:border-emerald-500/40 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">architecture</span>
+                                    </div>
+                                    <h4 class="font-mono text-headline-sm text-white font-semibold">Clean Architecture
+                                    </h4>
+                                    <p class="font-mono text-body-sm text-text-muted">Strict domain separation, modular
+                                        components, and predictable state transitions.</p>
+                                </div>
+                                <!-- Principle 2 -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-elevated border border-white/5 flex flex-col gap-space-xs hover:border-emerald-500/40 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">speed</span>
+                                    </div>
+                                    <h4 class="font-mono text-headline-sm text-white font-semibold">Performance First
+                                    </h4>
+                                    <p class="font-mono text-body-sm text-text-muted">Sub-second response budgets,
+                                        efficient queries, and streamlined server-side payloads.</p>
+                                </div>
+                                <!-- Principle 3 -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-elevated border border-white/5 flex flex-col gap-space-xs hover:border-emerald-500/40 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">code_blocks</span>
+                                    </div>
+                                    <h4 class="font-mono text-headline-sm text-white font-semibold">Developer Experience
+                                    </h4>
+                                    <p class="font-mono text-body-sm text-text-muted">Self-documenting code, exhaustive
+                                        typing with TypeScript, and automated testing.</p>
+                                </div>
+                                <!-- Principle 4 -->
+                                <div
+                                    class="p-space-md rounded-lg bg-surface-elevated border border-white/5 flex flex-col gap-space-xs hover:border-emerald-500/40 transition-colors">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-[18px]">autorenew</span>
+                                    </div>
+                                    <h4 class="font-mono text-headline-sm text-white font-semibold">Constant Evolution
+                                    </h4>
+                                    <p class="font-mono text-body-sm text-text-muted">Embracing challenges as
+                                        opportunities to expand domain knowledge across the full stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- TECH STACK PLAYGROUND (MONOCHROME + VIBRANT EMERALD ACCENT) -->
+            <section class="w-full py-space-xl relative border-b border-white/10">
+                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-lg">
+                    <!-- Section Heading with Filter Switches -->
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-md">
+                        <div>
+                            <div
+                                class="flex items-center gap-space-xs text-emerald-400 font-mono text-label-code uppercase tracking-widest font-semibold">
+                                <span>// 02</span>
+                                <span>Technical Ecosystem</span>
+                            </div>
+                            <h2 class="font-mono text-headline-lg text-white font-bold">The Modern Stack</h2>
+                        </div>
+                        <!-- Filter Pills -->
+                        <div
+                            class="flex items-center gap-space-xs p-1 rounded-lg bg-surface-card border border-white/10 overflow-x-auto">
+                            <button
+                                class="stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm bg-white text-black font-semibold transition-all"
+                                onclick="filterStack('all', this)">All (13)</button>
+                            <button
+                                class="stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm text-text-muted hover:text-white transition-all"
+                                onclick="filterStack('lang', this)">Languages</button>
+                            <button
+                                class="stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm text-text-muted hover:text-white transition-all"
+                                onclick="filterStack('frontend', this)">Frontend</button>
+                            <button
+                                class="stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm text-text-muted hover:text-white transition-all"
+                                onclick="filterStack('backend', this)">Backend &amp; DevOps</button>
+                        </div>
+                    </div>
+                    <!-- Tech Stack Interactive Pills Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-space-sm"
+                        id="tech-matrix">
+                        <!-- Language: TypeScript -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="lang">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Lang</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">TypeScript</span>
+                            <span class="font-mono text-label-code text-text-muted">Strict · Type Safe</span>
+                        </div>
+                        <!-- Language: JavaScript ES6+ -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="lang">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Lang</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">JS
+                                ES6+</span>
+                            <span class="font-mono text-label-code text-text-muted">Async · Functional</span>
+                        </div>
+                        <!-- Language: C# -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="lang">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Lang</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">C#</span>
+                            <span class="font-mono text-label-code text-text-muted">Enterprise · OOP</span>
+                        </div>
+                        <!-- Language: Python -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="lang">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Lang</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Python</span>
+                            <span class="font-mono text-label-code text-text-muted">AI/ML · Scripting</span>
+                        </div>
+                        <!-- Frontend: React JS -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="frontend">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Frontend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">React.js</span>
+                            <span class="font-mono text-label-code text-text-muted">Hooks · Virtual DOM</span>
+                        </div>
+                        <!-- Frontend: Next JS -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="frontend">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Frontend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Next.js</span>
+                            <span class="font-mono text-label-code text-text-muted">App Router · SSR</span>
+                        </div>
+                        <!-- Frontend: Vue JS -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="frontend">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Frontend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Vue.js</span>
+                            <span class="font-mono text-label-code text-text-muted">Composition API</span>
+                        </div>
+                        <!-- Frontend: Nuxt JS -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="frontend">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Frontend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Nuxt.js</span>
+                            <span class="font-mono text-label-code text-text-muted">Universal Vue Apps</span>
+                        </div>
+                        <!-- Frontend: Tailwind CSS -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="frontend">
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Frontend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Tailwind
+                                CSS</span>
+                            <span class="font-mono text-label-code text-text-muted">Design Systems</span>
+                        </div>
+                        <!-- Backend: ASP.NET Core -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="backend">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Backend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">ASP.NET</span>
+                            <span class="font-mono text-label-code text-text-muted">Web APIs · EF Core</span>
+                        </div>
+                        <!-- Backend: Flask -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="backend">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">Backend</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Flask</span>
+                            <span class="font-mono text-label-code text-text-muted">Microservices · AI</span>
+                        </div>
+                        <!-- Backend/DevOps: Git & DevOps -->
+                        <div class="tech-item p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex flex-col gap-space-xs group"
+                            data-cat="backend">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono text-label-mono-sm text-emerald-400 font-semibold">DevOps</span>
+                                <span
+                                    class="w-2 h-2 rounded-full bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                            </div>
+                            <span
+                                class="font-mono text-headline-sm text-white group-hover:text-emerald-400 transition-colors font-bold">Git
+                                &amp; CI/CD</span>
+                            <span class="font-mono text-label-code text-text-muted">GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- FEATURED PROJECTS SHOWCASE -->
+            <section class="w-full py-space-xl bg-surface-dim/40 relative border-b border-white/10" id="projects">
+                <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-xl">
+                    <!-- Section Title -->
+                    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm">
+                        <div>
+                            <div
+                                class="flex items-center gap-space-xs text-emerald-400 font-mono text-label-code uppercase tracking-widest font-semibold">
+                                <span>// 03</span>
+                                <span>Featured Case Studies</span>
+                            </div>
+                            <h2 class="font-mono text-headline-lg text-white font-bold">Engineering Showcase</h2>
+                        </div>
+                        <p class="font-mono text-body-md text-text-muted max-w-sm">
+                            Production systems built for scale, internal business processes, and intelligent automated
+                            workflows.
+                        </p>
+                    </div>
+                    <!-- Project Cards List -->
+                    <div class="flex flex-col gap-space-xl">
+                        <!-- PROJECT 1: Kawan Lama E-Recruitment -->
+                        <div
+                            class="rounded-xl bg-surface-card border border-white/10 p-space-lg lg:p-space-xl shadow-lg hover:border-emerald-500/40 hover:shadow-[0_8px_32px_-4px_rgba(16,185,129,0.15)] transition-all">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+                                <!-- Left Mockup/Visual -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-sm">
+                                    <div
+                                        class="relative rounded-lg overflow-hidden bg-surface-elevated aspect-video group border border-white/10">
+                                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            data-alt="High tech dark mode dashboard preview of Kawan Lama E-Recruitment portal showing applicant pipeline, job requisition status cards, emerald graph metrics, modern enterprise user interface, crisp dark obsidian theme."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOuGXZE3up3DzC2qI2yqRKHMHctPaep_YSa5bjkImaIUlAap-IGIBpUTi5sJG57-LtsbdweyyZ-MV5D7hCrOwr7pu4W1zUoiKTLFi2yD5KOBAmZI-4lfJphc5naATASLmQhT66_HDbvT1z47fksFeiTdGFbiRh0pdtKkvWVXlN90FD-MMPiTwgh5GKm1ZsPaWDbK7D2qooNM24sY-aSJcGIr1H-G_45DAHNMcHIilWNVWbzbr-M4w" />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent opacity-60">
+                                        </div>
+                                        <!-- Badge on card -->
+                                        <div
+                                            class="absolute top-space-sm left-space-sm px-space-sm py-1 rounded bg-black/90 backdrop-blur-md font-mono text-label-mono-sm text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                            <span>Production Live</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right Content -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-md">
+                                    <div class="flex items-center justify-between">
+                                        <span
+                                            class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-wider font-semibold">01
+                                            · Enterprise Web Application</span>
+                                        <span class="font-mono text-label-code text-text-muted">PRJ001</span>
+                                    </div>
+                                    <h3 class="font-mono text-headline-lg text-white font-bold">
+                                        Kawan Lama E-Recruitment
+                                    </h3>
+                                    <p class="font-mono text-body-md text-text-muted">
+                                        Kawan Lama E-Recruitment merupakan website karir enterprise yang mengelola
+                                        seluruh proses rekrutmen kandidat karyawan Kawan Lama Group. Engineered for
+                                        swift applicant processing, candidate tracking, and seamless synchronization
+                                        with HR core systems.
+                                    </p>
+                                    <!-- Tech Pills -->
+                                    <div class="flex flex-wrap items-center gap-space-xs">
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Next.js</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">TypeScript</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">REST
+                                            API</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Tailwind
+                                            CSS</span>
+                                    </div>
+                                    <!-- Action Links -->
+                                    <div class="flex items-center gap-space-md pt-space-xs">
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code font-bold px-space-md py-space-xs rounded-lg bg-white text-black hover:bg-emerald-400 hover:text-black transition-all shadow-[0_0_12px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+                                            href="https://karir.kawanlamagroup.com/" rel="noreferrer" target="_blank">
+                                            <span>Live App</span>
+                                            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                        </a>
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code text-white hover:text-emerald-400 transition-colors"
+                                            href="#projects">
+                                            <span>View Details</span>
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PROJECT 2: Kawan Lama Academy -->
+                        <div
+                            class="rounded-xl bg-surface-card border border-white/10 p-space-lg lg:p-space-xl shadow-lg hover:border-emerald-500/40 hover:shadow-[0_8px_32px_-4px_rgba(16,185,129,0.15)] transition-all">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+                                <!-- Left Content (Flipped layout for visual rhythm) -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-md order-2 lg:order-1">
+                                    <div class="flex items-center justify-between">
+                                        <span
+                                            class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-wider font-semibold">02
+                                            · Internal EdTech &amp; LMS</span>
+                                        <span class="font-mono text-label-code text-text-muted">PRJ002</span>
+                                    </div>
+                                    <h3 class="font-mono text-headline-lg text-white font-bold">
+                                        Kawan Lama Academy
+                                    </h3>
+                                    <p class="font-mono text-body-md text-text-muted">
+                                        Kawan Lama Academy merupakan platform pembelajaran komprehensif bagi 30.000+
+                                        karyawan internal Kawan Lama Group. Implemented role-based learning tracks,
+                                        dynamic evaluation quizzes, automated certificate generation, and performance
+                                        analytics.
+                                    </p>
+                                    <!-- Tech Pills -->
+                                    <div class="flex flex-wrap items-center gap-space-xs">
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Vue.js</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Nuxt.js</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">ASP.NET</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">SQL
+                                            Database</span>
+                                    </div>
+                                    <!-- Action Links -->
+                                    <div class="flex items-center gap-space-md pt-space-xs">
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code font-bold px-space-md py-space-xs rounded-lg bg-white text-black hover:bg-emerald-400 hover:text-black transition-all shadow-[0_0_12px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+                                            href="https://klacademy.klgsys.com/" rel="noreferrer" target="_blank">
+                                            <span>Live App</span>
+                                            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                        </a>
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code text-white hover:text-emerald-400 transition-colors"
+                                            href="#projects">
+                                            <span>View Details</span>
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Right Mockup/Visual -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-sm order-1 lg:order-2">
+                                    <div
+                                        class="relative rounded-lg overflow-hidden bg-surface-elevated aspect-video group border border-white/10">
+                                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            data-alt="Futuristic clean learning dashboard for Kawan Lama Academy with interactive course progress rings, course curriculum sidebar, student badges, obsidian black UI with mint cyan and emerald accents, modern typography."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoA2hheJsd1KjtukWffDqkcsv_GGjP_LojZCDKCp3ew3FZjS5JD5SOZt8fbXAi0p3IEnkdMrOa5FuK8PumRYrkDclNQ3xd5mjsJb_ryIH_zzIW5f6QPC5LCtom1V63b1ecNXChizomziTb7HvFTqd_ant3OOLW5pJX5pm_dXo2ZSbKA2hTCGqlEzc-z8jDUxdVOBdluButtxORfkHvOq4SAsLXe9CTYr91rCpfiMaQlgGAfAEuLVg" />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent opacity-60">
+                                        </div>
+                                        <div
+                                            class="absolute top-space-sm right-space-sm px-space-sm py-1 rounded bg-black/90 backdrop-blur-md font-mono text-label-mono-sm text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[14px]">groups</span>
+                                            <span>30,000+ Staff</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PROJECT 3: POSnova -->
+                        <div
+                            class="rounded-xl bg-surface-card border border-white/10 p-space-lg lg:p-space-xl shadow-lg hover:border-emerald-500/40 hover:shadow-[0_8px_32px_-4px_rgba(16,185,129,0.15)] transition-all">
+                            <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+                                <!-- Left Mockup/Visual -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-sm">
+                                    <div
+                                        class="relative rounded-lg overflow-hidden bg-surface-elevated aspect-video group border border-white/10">
+                                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            data-alt="POSnova Point of Sales checkout screen with integrated AI recommendation tray, inventory level telemetry, modern payment drawer interface, clean dark developer aesthetic with emerald highlights."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCULYzqr6PHQVLQ5sGmbA7P14FI722fwqxkT8a7PLHhW46eM65nSrcyd-s-EPpGAfYsEcL4FLAuNOzO0fXUiCagUnILe5dJ3oZWkzmlJCm_gqUUVLL4Y7kKKKWLVNZSQKbbu3643U94Ci5x5GbsF6IGwthEiAJLUYqb6BLoSyLWO37Lx-9q_bHq0nLELM_ZIvxY0gRwPpOoiuUDDIDM6g-iW1BWw7_QV1WfFcFOA0CAotsekqAaM0E" />
+                                        <div
+                                            class="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent opacity-60">
+                                        </div>
+                                        <div
+                                            class="absolute top-space-sm left-space-sm px-space-sm py-1 rounded bg-black/90 backdrop-blur-md font-mono text-label-mono-sm text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[14px]">smart_toy</span>
+                                            <span>AI Recommendation Engine</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Right Content -->
+                                <div class="lg:col-span-6 flex flex-col gap-space-md">
+                                    <div class="flex items-center justify-between">
+                                        <span
+                                            class="font-mono text-label-mono-sm text-emerald-400 uppercase tracking-wider font-semibold">03
+                                            · Smart Retail &amp; AI</span>
+                                        <span class="font-mono text-label-code text-text-muted">PRJ003</span>
+                                    </div>
+                                    <h3 class="font-mono text-headline-lg text-white font-bold">
+                                        POSnova
+                                    </h3>
+                                    <p class="font-mono text-body-md text-text-muted">
+                                        POSnova adalah aplikasi Point of Sales berbasis website dengan sistem
+                                        rekomendasi produk berbasis AI. Integrates real-time inventory ledgering with a
+                                        tailored machine learning engine to suggest cross-selling items during retail
+                                        checkout.
+                                    </p>
+                                    <!-- Tech Pills -->
+                                    <div class="flex flex-wrap items-center gap-space-xs">
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">React.js</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Python
+                                            (Flask)</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">AI/ML
+                                            Engine</span>
+                                        <span
+                                            class="px-space-sm py-1 rounded-full bg-surface-elevated border border-white/10 font-mono text-label-mono-sm text-text-muted">Vercel</span>
+                                    </div>
+                                    <!-- Action Links -->
+                                    <div class="flex items-center gap-space-md pt-space-xs">
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code font-bold px-space-md py-space-xs rounded-lg bg-white text-black hover:bg-emerald-400 hover:text-black transition-all shadow-[0_0_12px_rgba(255,255,255,0.15)] hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+                                            href="https://posnova-skripsi.vercel.app/" rel="noreferrer" target="_blank">
+                                            <span>Live App</span>
+                                            <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                        </a>
+                                        <a class="inline-flex items-center gap-space-xs font-mono text-label-code text-white hover:text-emerald-400 transition-colors"
+                                            href="#projects">
+                                            <span>View Details</span>
+                                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- CONTACT & CONNECT SECTION -->
+            <section class="w-full py-space-xl relative overflow-hidden" id="contact">
+                <!-- Ambient Emerald Light Accent -->
+                <div
+                    class="absolute -bottom-20 left-1/3 w-80 h-80 bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none">
+                </div>
+                <div
+                    class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin flex flex-col gap-space-xl relative z-10">
+                    <!-- Split Header: Callout & Command Runner -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+                        <div class="lg:col-span-7 flex flex-col gap-space-md">
+                            <div
+                                class="flex items-center gap-space-xs text-emerald-400 font-mono text-label-code uppercase tracking-widest font-semibold">
+                                <span>// 04</span>
+                                <span>Initiate Transmission</span>
+                            </div>
+                            <h2 class="font-mono text-display-hero text-white tracking-tight font-bold">
+                                Let's build something <span class="text-emerald-400">extraordinary</span> together.
+                            </h2>
+                            <p class="font-mono text-body-lg text-text-muted max-w-xl">
+                                Whether you want to architect an enterprise platform, discuss modern web frameworks, or
+                                brainstorm impactful projects, my inbox is always open.
+                            </p>
+                            <!-- Interactive NPX Card -->
+                            <div
+                                class="p-space-sm rounded-lg bg-surface-card border border-white/10 flex items-center justify-between gap-space-sm max-w-md">
+                                <div
+                                    class="flex items-center gap-space-xs font-mono text-label-code text-white overflow-x-auto">
+                                    <span class="text-emerald-400 font-bold">$</span>
+                                    <span>npx ferry-febrian</span>
+                                </div>
+                                <button class="text-text-muted hover:text-emerald-400 relative flex-shrink-0"
+                                    onclick="copySnippetText('npx ferry-febrian', 'npx-feedback')">
+                                    <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                                    <span
+                                        class="absolute -top-7 right-0 px-2 py-0.5 rounded bg-emerald-400 text-black font-mono text-label-mono-sm font-semibold opacity-0 transition-opacity pointer-events-none"
+                                        id="npx-feedback">Copied!</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Direct Contact Cards Grid -->
+                        <div class="lg:col-span-5 grid grid-cols-1 gap-space-sm">
+                            <!-- Email Card -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex items-center justify-between group">
+                                <div class="flex items-center gap-space-md min-w-0">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-surface-elevated border border-white/10 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-400 group-hover:text-black transition-all">
+                                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span class="font-mono text-label-mono-sm text-text-muted uppercase">Direct
+                                            Email</span>
+                                        <a class="font-mono text-body-md text-white hover:text-emerald-400 transition-colors truncate font-medium"
+                                            href="mailto:ferryfebrian.lim@gmail.com">
+                                            ferryfebrian.lim@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+                                <button class="text-text-muted hover:text-emerald-400 relative p-space-xs flex-shrink-0"
+                                    onclick="copySnippetText('ferryfebrian.lim@gmail.com', 'contact-email-feedback')">
+                                    <span class="material-symbols-outlined text-[18px]">content_copy</span>
+                                    <span
+                                        class="absolute -top-7 right-0 px-2 py-0.5 rounded bg-emerald-400 text-black font-mono text-label-mono-sm font-semibold opacity-0 transition-opacity pointer-events-none"
+                                        id="contact-email-feedback">Copied!</span>
+                                </button>
+                            </div>
+                            <!-- WhatsApp Card -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex items-center justify-between group">
+                                <div class="flex items-center gap-space-md min-w-0">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-surface-elevated border border-white/10 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-400 group-hover:text-black transition-all">
+                                        <span class="material-symbols-outlined text-[20px]">chat</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-mono text-label-mono-sm text-text-muted uppercase">WhatsApp</span>
+                                        <a class="font-mono text-body-md text-white hover:text-emerald-400 transition-colors truncate font-medium"
+                                            href="https://wa.me/628988433850" rel="noreferrer" target="_blank">
+                                            +62 898 8433 850
+                                        </a>
+                                    </div>
+                                </div>
+                                <a class="text-text-muted hover:text-emerald-400 p-space-xs flex-shrink-0"
+                                    href="https://wa.me/628988433850" rel="noreferrer" target="_blank">
+                                    <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                                </a>
+                            </div>
+                            <!-- LinkedIn Card -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-card border border-white/10 hover:border-emerald-500 hover:bg-surface-elevated transition-all flex items-center justify-between group">
+                                <div class="flex items-center gap-space-md min-w-0">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-surface-elevated border border-white/10 text-emerald-400 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-400 group-hover:text-black transition-all">
+                                        <span class="material-symbols-outlined text-[20px]">work</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span
+                                            class="font-mono text-label-mono-sm text-text-muted uppercase">Professional
+                                            Network</span>
+                                        <a class="font-mono text-body-md text-white hover:text-emerald-400 transition-colors truncate font-medium"
+                                            href="https://www.linkedin.com/in/ferry-febrian-it/" rel="noreferrer"
+                                            target="_blank">
+                                            linkedin.com/in/ferry-febrian-it
+                                        </a>
+                                    </div>
+                                </div>
+                                <a class="text-text-muted hover:text-emerald-400 p-space-xs flex-shrink-0"
+                                    href="https://www.linkedin.com/in/ferry-febrian-it/" rel="noreferrer"
+                                    target="_blank">
+                                    <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                                </a>
+                            </div>
+                            <!-- Location & Availability Badge -->
+                            <div
+                                class="p-space-md rounded-xl bg-surface-container border border-white/10 flex items-center justify-between">
+                                <div class="flex items-center gap-space-sm">
+                                    <span
+                                        class="material-symbols-outlined text-[18px] text-emerald-400">location_on</span>
+                                    <span class="font-mono text-label-code text-white">Jakarta, Indonesia</span>
+                                </div>
+                                <span class="font-mono text-label-mono-sm text-text-muted">UTC+7 (WIB)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script>
+            // Simple Vanilla JS micro-interactions for Tech Filter & Clipboard
+            function filterStack(category, btnElement) {
+                // Reset active button styles
+                document.querySelectorAll('.stack-filter-btn').forEach(btn => {
+                    btn.className = 'stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm text-text-muted hover:text-white transition-all';
+                });
+                btnElement.className = 'stack-filter-btn px-space-sm py-1 rounded font-mono text-label-mono-sm bg-white text-black font-semibold transition-all';
+
+                // Show/hide tech tiles
+                const items = document.querySelectorAll('.tech-item');
+                items.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-cat') === category) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            function copySnippetText(textOrId, feedbackId) {
+                let text = textOrId;
+                const el = document.getElementById(textOrId);
+                if (el) {
+                    text = el.innerText;
+                }
+                navigator.clipboard.writeText(text).then(() => {
+                    const fb = document.getElementById(feedbackId);
+                    if (fb) {
+                        fb.classList.remove('opacity-0');
+                        fb.classList.add('opacity-100');
+                        setTimeout(() => {
+                            fb.classList.remove('opacity-100');
+                            fb.classList.add('opacity-0');
+                        }, 1800);
+                    }
+                });
+            }
+
+            function copyEmailSnippet(email, feedbackId) {
+                copySnippetText(email, feedbackId);
+            }
+        </script>
+    </main>
+    <footer class="w-full bg-[#0A0A0D] border-t border-white/10 mt-auto">
+        <div class="max-w-[1200px] mx-auto px-margin-mobile lg:px-margin py-space-xl">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-space-lg">
+                <div class="flex flex-col items-center md:items-start gap-space-xs">
+                    <div class="flex items-center gap-space-sm"><img alt="FF Monogram Logo"
+                            class="h-6 w-auto object-contain opacity-90"
+                            src="https://lh3.googleusercontent.com/aida/AEtjO1VP1QlL5CUZh9sSTLrgCM-5GPEAVY8WGU1ADk45xdPmjscj5iOa3mFI8YuifrtMeKrIXNIbGNRKznO_RoTbEW5rfEBOi6GzYLcHQX1s-0k8Xdg38NpKF6oSVmNOpRRl1UP8ue2-_Qx6lmEIVtZ6qyLd4n2Iu8Fxm4UZcqSKhvE7fzFVRb_ecWSqjP61OM_t6lNcH6OEn8cV1wiDYr2usCOAFBWOUxpr3l45Jdnx-luN5qZkKTvm_PGfKQ" /><span
+                            class="font-mono text-headline-sm text-white font-bold">Ferry Febrian</span></div>
+                    <p class="font-mono text-body-sm text-text-muted text-center md:text-left">Full-Stack Engineer &amp;
+                        Creative Technologist. Crafting resilient cyber-minimal digital products.</p>
+                </div>
+                <div class="flex items-center gap-space-md flex-wrap justify-center"><a
+                        class="flex items-center gap-space-xs font-mono text-label-code text-on-surface-variant hover:text-emerald-400 transition-colors"
+                        href="https://github.com" rel="noreferrer" target="_blank"><span
+                            class="material-symbols-outlined text-[18px]">code</span><span>GitHub</span></a><a
+                        class="flex items-center gap-space-xs font-mono text-label-code text-on-surface-variant hover:text-emerald-400 transition-colors"
+                        href="https://linkedin.com" rel="noreferrer" target="_blank"><span
+                            class="material-symbols-outlined text-[18px]">business_center</span><span>LinkedIn</span></a><a
+                        class="flex items-center gap-space-xs font-mono text-label-code text-on-surface-variant hover:text-emerald-400 transition-colors"
+                        href="https://whatsapp.com" rel="noreferrer" target="_blank"><span
+                            class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp</span></a><a
+                        class="flex items-center gap-space-xs font-mono text-label-code text-on-surface-variant hover:text-emerald-400 transition-colors"
+                        href="mailto:ferryfebrian.lim@gmail.com"><span
+                            class="material-symbols-outlined text-[18px]">mail</span><span>Email</span></a></div>
+            </div>
+            <div
+                class="mt-space-lg pt-space-lg border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-mono text-label-mono-sm text-text-muted">
+                <p>© 2026 Ferry Febrian. All rights reserved.</p>
+                <div class="flex items-center gap-space-xs"><span
+                        class="material-symbols-outlined text-[14px] text-emerald-400">terminal</span><span>Architected
+                        with Tailwind CSS &amp; Monospace Design</span></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
