@@ -12,7 +12,7 @@ import type { Project } from "@/lib/portfolio-data"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="group overflow-hidden border-border-subtle bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-[0_0_24px_-8px_rgba(139,92,246,0.5)]">
+    <Card className="group overflow-hidden border-border-subtle bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-[0_0_24px_-8px_rgba(139,92,246,0.5)] active:border-primary/70 active:shadow-[0_0_24px_-8px_rgba(139,92,246,0.5)] focus-within:border-primary/70 focus-within:shadow-[0_0_24px_-8px_rgba(139,92,246,0.5)]">
       <CardHeader className="gap-4 p-5 pb-0 sm:p-6 sm:pb-0">
         <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.14em] text-secondary">
           <span>

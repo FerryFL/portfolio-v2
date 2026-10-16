@@ -1,6 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
-import { FileText, Send, UserRound } from "lucide-react"
+import { FileText, Menu, Send, UserRound } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
+
+const navigationItems = [
+  { href: "/#overview", label: "Overview" },
+  { href: "/#about", label: "About Me" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
+]
 
 export function SiteHeader() {
   return (
@@ -12,16 +21,33 @@ export function SiteHeader() {
             ferryfebrian<span className="text-emerald-400">.com</span>
           </Link>
         </div>
-        <nav className="hidden items-center gap-1 md:flex">
-          <Link href="/#overview" className="rounded-lg bg-white px-3 py-2 font-mono text-xs font-medium text-black">Overview</Link>
-          <Link href="/#about" className="rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:bg-[#17181d] hover:text-white">About Me</Link>
-          <Link href="/#projects" className="rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:bg-[#17181d] hover:text-white">Projects</Link>
-          <Link href="/#contact" className="rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:bg-[#17181d] hover:text-white">Contact</Link>
+        <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
+          {navigationItems.map((item, index) => (
+            <Link key={item.href} href={item.href} className={index === 0 ? "rounded-lg bg-white px-3 py-2 font-mono text-xs font-medium text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400" : "rounded-lg px-3 py-2 font-mono text-xs text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400"}>{item.label}</Link>
+          ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <Link href="/CV_Ferry_Febrian.pdf" target="_blank" className="hidden items-center gap-1.5 rounded-lg border border-white/10 bg-[#17181d] px-4 py-2 font-mono text-xs text-white transition-colors hover:border-emerald-500 hover:text-emerald-400 sm:inline-flex"><FileText className="size-3.5" />Resume</Link>
-          <Link href="/#contact" className="inline-flex items-center gap-1.5 rounded-lg bg-white px-4 py-2 font-mono text-xs font-semibold text-black transition-colors hover:bg-emerald-400">Get in Touch<Send className="size-3.5" /></Link>
+          <Link href="/CV_Ferry_Febrian.pdf" target="_blank" className="hidden items-center gap-1.5 rounded-lg border border-white/10 bg-[#17181d] px-4 py-2 font-mono text-xs text-white transition-colors hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black sm:inline-flex"><FileText className="size-3.5" />Resume</Link>
+          <Link href="/#contact" className="hidden items-center gap-1.5 rounded-lg bg-white px-4 py-2 font-mono text-xs font-semibold text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400 sm:inline-flex">Get in Touch<Send className="size-3.5" /></Link>
           <span className="hidden size-8 items-center justify-center rounded-full border border-white/10 bg-[#17181d] text-[#a1a1aa] lg:inline-flex" aria-hidden="true"><UserRound className="size-4" /></span>
+          <Sheet>
+            <SheetTrigger render={<Button variant="outline" size="icon-lg" className="border-white/10 bg-[#17181d] text-white hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black md:hidden" aria-label="Open navigation menu" />}>
+              <Menu className="size-5" data-icon="inline-start" />
+            </SheetTrigger>
+            <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle>Navigation menu</SheetTitle>
+                <SheetDescription>Jump to a section or get in touch.</SheetDescription>
+              </SheetHeader>
+              <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
+                {navigationItems.map((item, index) => (
+                  <SheetClose key={item.href} nativeButton={false} render={<Link href={item.href} />} className={index === 0 ? "rounded-lg bg-white px-4 py-3 font-mono text-sm font-medium text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400" : "rounded-lg px-4 py-3 font-mono text-sm text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400"}>{item.label}</SheetClose>
+                ))}
+                <SheetClose nativeButton={false} render={<Link href="/CV_Ferry_Febrian.pdf" target="_blank" />} className="mt-2 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#17181d] px-4 py-3 font-mono text-sm text-white transition-colors hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black"><FileText data-icon="inline-start" />Resume</SheetClose>
+                <SheetClose nativeButton={false} render={<Link href="/#contact" />} className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 font-mono text-sm font-semibold text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400">Get in Touch<Send data-icon="inline-end" /></SheetClose>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

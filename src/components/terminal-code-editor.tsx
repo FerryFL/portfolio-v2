@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Copy, CopyCheck } from "lucide-react"
+import { CheckCheck, Copy } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const defaultCode = `const engineer = {
@@ -40,8 +40,8 @@ export function TerminalCodeEditor({
   }
 
   return (
-    <div className="group relative flex min-w-0 max-w-full flex-col gap-4 overflow-visible rounded-xl border border-white/10 bg-[#111216] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.8)] transition-colors hover:border-emerald-500/40">
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-100" />
+    <div className="group relative flex min-w-0 max-w-full flex-col gap-4 overflow-visible rounded-xl border border-white/10 bg-[#111216] p-4 shadow-[0_16px_40px_rgba(0,0,0,0.8)] transition-colors hover:border-emerald-500/40 active:border-emerald-500/40">
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent opacity-60 transition-opacity group-hover:opacity-100 group-active:opacity-100" />
 
       <div className="relative z-10 flex items-center justify-between border-b border-white/5 pb-2">
         <div className="flex items-center gap-1.5">
@@ -60,7 +60,7 @@ export function TerminalCodeEditor({
             className="text-[#8a8a93] hover:bg-transparent hover:text-emerald-400"
             aria-label={copied ? "Code copied" : "Copy code"}
           >
-            {copied ? <CopyCheck aria-hidden="true" /> : <Copy aria-hidden="true" />}
+            {copied ? <CheckCheck aria-hidden="true" /> : <Copy aria-hidden="true" />}
           </Button>
           <span
             className={`pointer-events-none absolute -top-9 right-0 z-50 rounded bg-emerald-400 px-2 py-0.5 font-mono text-[11px] font-semibold text-black transition-opacity ${copied ? "opacity-100" : "opacity-0"}`}

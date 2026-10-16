@@ -52,7 +52,7 @@ export function TechStackPlayground() {
                 key={filter.id}
                 type="button"
                 onClick={() => setActiveFilter(filter.id)}
-                className={`shrink-0 rounded px-3 py-1.5 font-mono text-[11px] transition-colors ${activeFilter === filter.id ? "bg-white font-semibold text-black" : "text-[#8a8a93] hover:text-white"}`}
+                className={`shrink-0 rounded px-3 py-1.5 font-mono text-[11px] transition-colors ${activeFilter === filter.id ? "bg-white font-semibold text-black" : "text-[#8a8a93] hover:text-white active:bg-[#17181d] active:text-white focus-visible:bg-[#17181d] focus-visible:text-white"}`}
               >
                 {filter.label}
               </button>
@@ -62,7 +62,7 @@ export function TechStackPlayground() {
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {visibleTechnologies.map((technology) => (
-            <div key={technology.name} className="group flex flex-col gap-1 rounded-xl border border-white/10 bg-[#111216] p-4 transition-all hover:border-emerald-500 hover:bg-[#17181d]">
+            <div key={technology.name} className="group flex flex-col gap-1 rounded-xl border border-white/10 bg-[#111216] p-4 transition-all hover:border-emerald-500 hover:bg-[#17181d] active:border-emerald-500 active:bg-[#17181d]">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-[11px] font-semibold text-emerald-400">{technology.type}</span>
                 <span className="size-2 rounded-full bg-emerald-400 opacity-0 transition-opacity group-hover:opacity-100" />

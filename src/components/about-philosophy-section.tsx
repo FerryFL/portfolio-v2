@@ -71,7 +71,7 @@ export function AboutPhilosophySection() {
         </div>
 
         <div className="grid gap-4 md:grid-cols-12">
-          <article className="flex flex-col justify-between gap-6 rounded-xl border border-white/10 bg-[#111216] p-6 shadow-md transition-colors hover:border-emerald-500/30 md:col-span-7">
+          <article className="flex flex-col justify-between gap-6 rounded-xl border border-white/10 bg-[#111216] p-6 shadow-md transition-colors hover:border-emerald-500/30 active:border-emerald-500/30 md:col-span-7">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400">
                 Trajectory
@@ -82,7 +82,7 @@ export function AboutPhilosophySection() {
             <div className="my-1 flex flex-col gap-5">
               {journey.map((item, index) => (
                 <div key={item.title} className="group flex items-start gap-4">
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#17181d] font-mono text-xs text-emerald-400 transition-colors group-hover:bg-emerald-400 group-hover:text-black">
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#17181d] font-mono text-xs text-emerald-400 transition-colors group-hover:bg-emerald-400 group-hover:text-black group-active:bg-emerald-400 group-active:text-black">
                     {item.number}
                   </div>
                   <div className="flex min-w-0 flex-col">
@@ -116,7 +116,7 @@ export function AboutPhilosophySection() {
             </div>
           </article>
 
-          <article className="flex flex-col justify-between gap-6 rounded-xl border border-white/10 bg-[#111216] p-6 shadow-md transition-colors hover:border-emerald-500/30 md:col-span-5">
+          <article className="flex flex-col justify-between gap-6 rounded-xl border border-white/10 bg-[#111216] p-6 shadow-md transition-colors hover:border-emerald-500/30 active:border-emerald-500/30 md:col-span-5">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-400">
                 Impact Matrix
@@ -167,7 +167,7 @@ export function AboutPhilosophySection() {
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {tenets.map((tenet) => (
-                <div key={tenet.title} className="flex flex-col gap-2 rounded-lg border border-white/5 bg-[#17181d] p-4 transition-colors hover:border-emerald-500/40">
+                <div key={tenet.title} className="flex flex-col gap-2 rounded-lg border border-white/5 bg-[#17181d] p-4 transition-colors hover:border-emerald-500/40 active:border-emerald-500/40">
                   <div className="flex size-8 items-center justify-center rounded-lg border border-emerald-500/20 bg-emerald-500/10 font-mono text-xs text-emerald-400">
                     {tenet.number}
                   </div>
