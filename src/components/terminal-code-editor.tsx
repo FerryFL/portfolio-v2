@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button"
 
 const defaultCode = `const engineer = {
   name: "Ferry Febrian",
-  role: "Associate Developer",
+  role: "Software Developer",
   company: "NTT DATA",
   motto: "Motivation gets you going,
           but discipline keeps you growing",
   stack: ["Next.js", "TypeScript", "C#", "Python"],
-  impact: "30,000+ Enterprise Users"
+  former: "Software Engineer (Kawan Lama Group)"
 };`
 
 type TerminalCodeEditorProps = {
@@ -24,7 +24,7 @@ type TerminalCodeEditorProps = {
 export function TerminalCodeEditor({
   code = defaultCode,
   fileName = "ferry-profile.ts",
-  focusText = "Next.js 15, TypeScript & Distributed Systems",
+  focusText = "Software Development, AI",
   focusStatus = "Active",
 }: TerminalCodeEditorProps) {
   const [copied, setCopied] = useState(false)
@@ -77,9 +77,7 @@ export function TerminalCodeEditor({
           {"\n"}
           <span className="text-white">  name</span>: <span className="text-emerald-300">&quot;Ferry Febrian&quot;</span>,
           {"\n"}
-          <span className="text-white">  role</span>: <span className="text-emerald-300">&quot;Associate Developer&quot;</span>,
-          {"\n"}
-          <span className="text-white">  company</span>: <span className="text-emerald-300">&quot;NTT DATA&quot;</span>,
+          <span className="text-white">  role</span>: <span className="text-emerald-300">&quot;Software Developer (NTT Data - PRU)&quot;</span>,
           {"\n"}
           <span className="text-white">  motto</span>: <span className="text-[#a1a1aa]">&quot;Motivation gets you going,</span>
           {"\n          "}
@@ -87,7 +85,7 @@ export function TerminalCodeEditor({
           {"\n"}
           <span className="text-white">  stack</span>: [<span className="text-emerald-300">&quot;Next.js&quot;</span>, <span className="text-emerald-300">&quot;TypeScript&quot;</span>, <span className="text-emerald-300">&quot;C#&quot;</span>, <span className="text-emerald-300">&quot;Python&quot;</span>],
           {"\n"}
-          <span className="text-white">  impact</span>: <span className="text-emerald-400">&quot;30,000+ Enterprise Users&quot;</span>
+          <span className="text-white">  former</span>: <span className="text-emerald-400">&quot;Software Engineer (Kawan Lama Group)&quot;</span>
           {"\n"}
           <span className="text-white">&#125;;</span>
         </code>
