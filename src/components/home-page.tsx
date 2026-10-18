@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -22,21 +23,23 @@ const showcaseProjects = [
     code: "PRJ001",
     title: "Kawan Lama E-Recruitment",
     description:
-      "A career platform that manages the complete recruitment process for Kawan Lama Group. Engineered for clear candidate journeys and reliable enterprise workflows.",
-    tags: ["Next.js", "TypeScript", "Tailwind", "REST API"],
+      "A career platform that manages the complete recruitment process for Kawan Lama Group. ",
+    tags: ["ASP.NET MVC", "C#", "SQl Server Management System (SSMS)"],
     slug: "kawan-lama-e-recruitment",
-    metric: "10,000+ Applicants",
+    metric: "Massive Volume of Applicants",
+    image: "/erec.png",
   },
   {
     number: "02",
-    category: "Internal EdTech & LMS",
+    category: "Internal EduTech & LMS",
     code: "PRJ002",
     title: "Kawan Lama Academy",
     description:
       "A learning platform for 30,000+ internal employees with role-based learning tracks, evaluation quizzes, certificates, and performance analytics.",
-    tags: ["Vue.js", "Nuxt.js", "ASP.NET", "SQL Database"],
+    tags: ["Vue.js", "Nuxt.js", "ASP.NET", "SQL", "Kafka"],
     slug: "retail-operations-console",
     metric: "30,000+ Staff",
+    image: "/kla.png",
   },
   {
     number: "03",
@@ -48,6 +51,7 @@ const showcaseProjects = [
     tags: ["React.js", "Python (Flask)", "AI/ML Engine", "Vercel"],
     slug: "commerce-insights",
     metric: "AI Recommendation Engine",
+    image: "/posnova.png",
   },
 ]
 
@@ -62,17 +66,31 @@ function StackSection() {
 function ProjectVisual({
   metric,
   icon,
+  image,
+  imageAlt,
 }: {
   metric: string
   icon: "users" | "bot" | "briefcase"
+  image?: string
+  imageAlt: string
 }) {
   const MetricIcon =
     icon === "users" ? Users : icon === "bot" ? Bot : BriefcaseBusiness
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-white/10 bg-[#17181d]">
-      <div className="transition-transform duration-500 group-hover:scale-[1.02]">
-        <BrowserMockup compact />
+      <div className="relative aspect-video overflow-hidden transition-transform duration-500 group-hover:scale-[1.02]">
+        {image ? (
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <BrowserMockup compact />
+        )}
       </div>
       <div className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded border border-emerald-500/30 bg-black/80 px-2 py-1 font-mono text-[10px] text-emerald-400 backdrop-blur-md">
         <MetricIcon data-icon="inline-start" />
@@ -89,15 +107,12 @@ function ShowcaseSection() {
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-              {"// 03 · Selected Work"}
+              {"// 03 · Projects"}
             </p>
             <h2 className="mt-2 font-mono text-2xl font-bold text-white sm:text-3xl">
               Engineering Showcase
             </h2>
           </div>
-          <p className="max-w-md font-mono text-sm leading-6 text-[#8a8a93]">
-            A selection of systems where product thinking meets technical craft.
-          </p>
         </div>
         <div className="flex flex-col gap-5">
           {showcaseProjects.map((project, index) => {
@@ -113,7 +128,12 @@ function ShowcaseSection() {
                   <div
                     className={`${isReversed ? "order-1 lg:order-2 lg:col-start-7" : "order-1 lg:order-1 lg:col-start-1"} lg:col-span-6`}
                   >
-                    <ProjectVisual metric={project.metric} icon={projectIcon} />
+                    <ProjectVisual
+                      metric={project.metric}
+                      icon={projectIcon}
+                      image={project.image}
+                      imageAlt={`${project.title} preview`}
+                    />
                   </div>
 
                   <div
@@ -186,7 +206,7 @@ export function HomePage() {
               </h1>
 
               <p className="max-w-xl font-mono text-base leading-7 text-[#8a8a93]">
-                Software Developer at <b className="font-medium text-white">NTT DATA</b> · Ex-Software Engineer Intern at <strong className="font-medium text-white">Kawan Lama Group</strong> · Computer Science Alumnus at <strong className="font-medium text-white">Bina Nusantara University</strong>.
+                Software Developer at <b className="font-medium text-white">NTT DATA (PRU)</b> · Ex-Software Engineer Intern at <strong className="font-medium text-white">Kawan Lama Group</strong> · Computer Science Alumnus at <strong className="font-medium text-white">Bina Nusantara University</strong>.
               </p>
 
               <div className="flex flex-wrap items-center gap-2 pt-2">
@@ -198,7 +218,6 @@ export function HomePage() {
                   <ArrowDownRight />
                 </Link>
                 <TrackedResumeLink
-                  target="_blank"
                   className="inline-flex items-center gap-2 rounded-lg border border-white/15 bg-[#17181d] px-5 py-3 font-mono text-sm text-white transition-colors hover:border-emerald-500 hover:text-emerald-400 active:border-emerald-500 active:text-emerald-400 focus-visible:border-emerald-500 focus-visible:text-emerald-400"
                 >
                   Download CV

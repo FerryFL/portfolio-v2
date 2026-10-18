@@ -18,7 +18,7 @@ export function SiteFooter() {
           <div className="flex flex-wrap justify-center gap-5 font-mono text-xs text-[#a1a1aa]">{footerLinks.map(({ label, href, icon: Icon }) => <a key={label} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center gap-1.5 transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400"><Icon className="size-3.5" />{label}</a>)}</div>
         </div>
         <Separator className="bg-white/5" />
-        <div className="flex flex-col items-center justify-between gap-2 font-mono text-[10px] text-[#8a8a93] sm:flex-row"><p>© 2026 Ferry Febrian. All rights reserved.</p><p className="inline-flex items-center gap-1.5"><Terminal className="size-3.5 text-emerald-400" />Architected with Tailwind CSS &amp; Monospace Design</p></div>
+        <div className="flex flex-col items-center justify-center gap-2 font-mono text-[10px] text-[#8a8a93] sm:flex-row"><p>© 2026 Ferry Febrian. All rights reserved.</p></div>
       </div>
     </footer>
   )
