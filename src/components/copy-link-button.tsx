@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { CheckCheck, Share2 } from "lucide-react"
 
-export function ShareCaseStudyButton() {
+export function CopyLinkButton() {
   const [copied, setCopied] = useState(false)
 
   async function handleShare() {

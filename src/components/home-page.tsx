@@ -15,45 +15,7 @@ import { ContactConnectSection } from "@/components/contact-connect-section"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import { TrackedResumeLink } from "@/components/tracked-resume-link"
-
-const showcaseProjects = [
-  {
-    number: "01",
-    category: "Enterprise Recruitment",
-    code: "PRJ001",
-    title: "Kawan Lama E-Recruitment",
-    description:
-      "A career platform that manages the complete recruitment process for Kawan Lama Group. ",
-    tags: ["ASP.NET MVC", "C#", "SQl Server Management System (SSMS)"],
-    slug: "kawan-lama-e-recruitment",
-    metric: "Massive Volume of Applicants",
-    image: "/erec.png",
-  },
-  {
-    number: "02",
-    category: "Internal EduTech & LMS",
-    code: "PRJ002",
-    title: "Kawan Lama Academy",
-    description:
-      "A learning platform for 30,000+ internal employees with role-based learning tracks, evaluation quizzes, certificates, and performance analytics.",
-    tags: ["Vue.js", "Nuxt.js", "ASP.NET", "SQL", "Kafka"],
-    slug: "retail-operations-console",
-    metric: "30,000+ Staff",
-    image: "/kla.png",
-  },
-  {
-    number: "03",
-    category: "Smart Retail & AI",
-    code: "PRJ003",
-    title: "POSnova",
-    description:
-      "A web-based point of sale application with an AI-powered product recommendation engine and real-time inventory telemetry.",
-    tags: ["React.js", "Python (Flask)", "AI/ML Engine", "Vercel"],
-    slug: "commerce-insights",
-    metric: "AI Recommendation Engine",
-    image: "/posnova.png",
-  },
-]
+import { projects } from "@/lib/portfolio-data"
 
 function JourneySection() {
   return <AboutPhilosophySection />
@@ -115,7 +77,7 @@ function ShowcaseSection() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          {showcaseProjects.map((project, index) => {
+          {projects.map((project, index) => {
             const isReversed = index % 2 === 1
             const projectIcon = index === 0 ? "users" : index === 1 ? "briefcase" : "bot"
 
@@ -129,10 +91,10 @@ function ShowcaseSection() {
                     className={`${isReversed ? "order-1 lg:order-2 lg:col-start-7" : "order-1 lg:order-1 lg:col-start-1"} lg:col-span-6`}
                   >
                     <ProjectVisual
-                      metric={project.metric}
+                      metric={project.scope}
                       icon={projectIcon}
                       image={project.image}
-                      imageAlt={`${project.title} preview`}
+                      imageAlt={`${project.scope} preview`}
                     />
                   </div>
 
@@ -141,9 +103,8 @@ function ShowcaseSection() {
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-400">
-                        {project.number} · {project.category}
+                        {project.index} · {project.type}
                       </span>
-                      <span className="font-mono text-xs text-[#8a8a93]">{project.code}</span>
                     </div>
                     <h3 className="font-mono text-2xl font-bold text-white transition-colors group-hover:text-emerald-50">
                       {project.title}
@@ -152,7 +113,7 @@ function ShowcaseSection() {
                       {project.description}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
+                      {project.stack.map((tag) => (
                         <Badge
                           key={tag}
                           variant="outline"

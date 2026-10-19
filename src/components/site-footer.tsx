@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Code2, Mail, MessageCircle, Terminal } from "lucide-react"
+import { BriefcaseBusiness, Code2, Mail, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 

@@ -40,7 +40,7 @@ export function TechStackPlayground() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <div>
             <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">
-              {"// 02 · Tech Stack"}
+              {"// 02 · Tech_Stack"}
             </p>
             <h2 className="mt-1 font-mono text-2xl font-bold text-white sm:text-3xl">
               The Modern Stack
