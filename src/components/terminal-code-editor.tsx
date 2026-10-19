@@ -24,7 +24,7 @@ type TerminalCodeEditorProps = {
 export function TerminalCodeEditor({
   code = defaultCode,
   fileName = "ferry-profile.ts",
-  focusText = "Software Development, AI",
+  focusText = "Software Engineering, AI",
   focusStatus = "Active",
 }: TerminalCodeEditorProps) {
   const [copied, setCopied] = useState(false)

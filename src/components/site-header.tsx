@@ -33,7 +33,7 @@ export function SiteHeader() {
           <span className="hidden size-8 items-center justify-center rounded-full border border-white/10 bg-[#17181d] text-[#a1a1aa] lg:inline-flex" aria-hidden="true"><UserRound className="size-4" /></span>
           <Sheet>
             <SheetTrigger render={<Button variant="outline" size="icon-lg" className="border-white/10 bg-[#17181d] text-white hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black md:hidden" aria-label="Open navigation menu" />}>
-              <Menu className="size-5" data-icon="inline-start" />
+              <Menu className="size-5" data-icon="inline-startfixed z-50 flex h-full w-3/5 max-w-sm flex-col gap-2 border-white/10" />
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>

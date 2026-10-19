@@ -53,7 +53,7 @@ export const projects: Project[] = [
       impact: "Overall, the recruitment process became significantly more efficient with CV OCR and Chatbot, and much more secure using Rate Limiter and Google reCAPTCHA",
     },
     techFrontend: ["ASP.NET MVC"],
-    techBackend: ["ASP.NET MVC, SQL Server Management System (SSMS)"],
+    techBackend: ["ASP.NET MVC", "SQL Server Management System (SSMS)"],
     techOthers: ["Google reCAPTCHA", "Google Conversational Agent (Chatbot)", "Task Scheduler", "Rate Limiter", "CV OCR"],
   },
   {

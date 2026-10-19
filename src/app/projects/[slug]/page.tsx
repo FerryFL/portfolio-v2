@@ -199,7 +199,7 @@ function MetaItem({ label, value, accent = false }: { label: string; value: stri
 
 function SectionLabel({ code, label }: { code: string; label: string }) {
   return (
-    <div className="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em]">
+    <div className="mb-3 flex flex-col md:flex-row gap-2 font-mono text-xs uppercase tracking-[0.14em]">
       <span className="font-semibold text-emerald-400">{code}</span>
       <span className="text-[#8a8a93]">{label}</span>
     </div>

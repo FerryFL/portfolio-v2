@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Separator } from "@/components/ui/separator"
 
 const footerLinks = [
-  { label: "GitHub", href: "https://github.com", icon: Code2 },
+  { label: "GitHub", href: "https://github.com/FerryFL", icon: Code2 },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/ferry-febrian-it/", icon: BriefcaseBusiness },
   { label: "WhatsApp", href: "https://wa.me/628988433850", icon: MessageCircle },
   { label: "Email", href: "mailto:ferryfebrian.lim@gmail.com", icon: Mail },
