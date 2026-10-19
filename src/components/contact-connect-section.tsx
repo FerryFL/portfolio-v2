@@ -21,9 +21,8 @@ export function ContactConnectSection() {
       <div className="pointer-events-none absolute -bottom-20 left-1/3 size-80 rounded-full bg-emerald-500/10 blur-[120px]" />
       <div className="relative z-10 mx-auto grid max-w-300 gap-10 px-5 lg:grid-cols-12 lg:items-center lg:px-8">
         <div className="min-w-0 space-y-5 lg:col-span-7">
-          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">{"// 04 · Contact Me"}</p>
+          <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">{"// 04 · Contact"}</p>
           <h2 className="font-mono text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">Let&apos;s build something <span className="text-emerald-400">extraordinary</span> together.</h2>
-          <p className="max-w-xl font-mono text-sm leading-6 text-[#8a8a93]">Whether you want to architect an enterprise platform, discuss modern web frameworks, or brainstorm impactful projects, my inbox is always open.</p>
           <div className="group flex w-full max-w-md items-center justify-between gap-3 rounded-lg border border-white/10 bg-[#111216] px-4 py-3 font-mono text-xs text-white transition-colors hover:border-emerald-500/50 active:border-emerald-500/50 focus-within:border-emerald-500/50">
             <code className="min-w-0 select-text truncate"><span className="mr-2 font-bold text-emerald-400">$</span>{command}</code>
             <button type="button" onClick={() => handleCopy(command)} className="inline-flex shrink-0 cursor-pointer items-center gap-1.5 text-[#8a8a93] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400" aria-label={copied === command ? "Copied command" : "Copy command"}>
@@ -33,9 +32,9 @@ export function ContactConnectSection() {
           </div>
         </div>
         <div className="min-w-0 space-y-3 lg:col-span-5">
-          <ContactCard icon={<Mail />} label="Direct Email" value={email} href={`mailto:${email}`} action="copy" copied={copied === email} onAction={() => handleCopy(email)} />
+          <ContactCard icon={<Mail />} label="Email" value={email} href={`mailto:${email}`} action="copy" copied={copied === email} onAction={() => handleCopy(email)} />
           <ContactCard icon={<MessageCircle />} label="WhatsApp" value="+62 898 8433 850" href="https://wa.me/628988433850" action="external" />
-          <ContactCard icon={<BriefcaseBusiness />} label="Professional Network" value="linkedin.com/in/ferry-febrian-it" href="https://www.linkedin.com/in/ferry-febrian-it/" action="external" />
+          <ContactCard icon={<BriefcaseBusiness />} label="Linkedin" value="linkedin.com/in/ferry-febrian-it" href="https://www.linkedin.com/in/ferry-febrian-it/" action="external" />
           <div className="flex items-center justify-between rounded-xl border border-white/10 bg-[#131418] p-4"><div className="flex min-w-0 items-center gap-3"><IconBox><MapPin /></IconBox><span className="truncate font-mono text-sm text-white">Jakarta, Indonesia</span></div><span className="ml-3 shrink-0 font-mono text-[10px] text-[#8a8a93]">UTC+7 (WIB)</span></div>
         </div>
       </div>

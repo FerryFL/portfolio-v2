@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Button } from "./ui/button";
 
 type StackCategory = "all" | "lang" | "frontend" | "backend"
 
@@ -48,14 +49,15 @@ export function TechStackPlayground() {
 
           <div className="flex max-w-full gap-1 overflow-x-auto rounded-lg border border-white/10 bg-[#111216] p-1 pb-2">
             {filters.map((filter) => (
-              <button
+              <Button
+                variant="ghost"
                 key={filter.id}
                 type="button"
                 onClick={() => setActiveFilter(filter.id)}
-                className={`shrink-0 rounded px-3 py-1.5 font-mono text-[11px] transition-colors ${activeFilter === filter.id ? "bg-white font-semibold text-black" : "text-[#8a8a93] hover:text-white active:bg-[#17181d] active:text-white focus-visible:bg-[#17181d] focus-visible:text-white"}`}
+                className={`shrink-0 border-0 rounded px-3 py-1.5 font-mono text-[11px] transition-colors ${activeFilter === filter.id ? "bg-white font-semibold text-[#17181d] hover:text-[#17181d] hover:bg-white" : ""}`}
               >
                 {filter.label}
-              </button>
+              </Button>
             ))}
           </div>
         </div>

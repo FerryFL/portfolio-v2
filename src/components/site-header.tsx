@@ -38,14 +38,19 @@ export function SiteHeader() {
             <SheetContent side="right">
               <SheetHeader>
                 <SheetTitle>Navigation menu</SheetTitle>
-                <SheetDescription>Jump to a section or get in touch.</SheetDescription>
+                <SheetDescription></SheetDescription>
               </SheetHeader>
               <nav aria-label="Mobile navigation" className="flex flex-col">
                 {navigationItems.map((item) => (
-                  <SheetClose key={item.href} nativeButton={false} render={<Link href={item.href} />} className="rounded-lg px-4 py-3 font-mono text-sm text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400 text-center">{item.label}</SheetClose>
+                  <SheetClose key={item.href} nativeButton={false} render={<Link href={item.href} />} className="rounded-lg px-4 py-3 font-mono text-sm text-[#a1a1aa] transition-colors hover:text-emerald-400 active:text-emerald-400 focus-visible:text-emerald-400 ps-0">{item.label}
+                  </SheetClose>
                 ))}
-                <SheetClose nativeButton={false} render={<TrackedResumeLink />} className="mt-2 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#17181d] px-4 py-3 font-mono text-sm text-white transition-colors hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black"><FileText data-icon="inline-start" />Resume</SheetClose>
-                <SheetClose nativeButton={false} render={<Link href="/#contact" />} className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 font-mono text-sm font-semibold text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400">Get in Touch<Send data-icon="inline-end" /></SheetClose>
+                <SheetClose nativeButton={false} render={<TrackedResumeLink />} className="mt-2 inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#17181d] px-4 py-3 font-mono text-sm text-white transition-colors hover:border-emerald-400 hover:bg-emerald-400 hover:text-black active:border-emerald-400 active:bg-emerald-400 active:text-black focus-visible:border-emerald-400 focus-visible:bg-emerald-400 focus-visible:text-black">
+                  <FileText data-icon="inline-start" />Resume
+                </SheetClose>
+                <SheetClose nativeButton={false} render={<Link href="/#contact" />} className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 font-mono text-sm font-semibold text-black transition-colors hover:bg-emerald-400 active:bg-emerald-400 focus-visible:bg-emerald-400">
+                  Get in Touch<Send data-icon="inline-end" />
+                </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
